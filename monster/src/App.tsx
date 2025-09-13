@@ -8,8 +8,8 @@ import {
 } from "./utils/redirects";
 
 const REDIRECTS: Record<string, string> = {
-	key1: "<url-1>",
-	key2: "<url-2>",
+	pavel: "https://pavelsvirak.cz",
+	petr: "https://sviraak.cz",
 };
 
 function App() {
@@ -23,11 +23,11 @@ function App() {
 		<div className={app}>
 			<Circle>
 				<Links>
-					<Links.Link href={REDIRECTS.key1}>[Value 1]</Links.Link>{" "}
-					<Links.Link href={REDIRECTS.key2}>[Value 2]</Links.Link>
+					<Links.Link href={REDIRECTS.petr}>Petr</Links.Link>{" "}
+					<Links.Link href={REDIRECTS.pavel}>Pavel</Links.Link>
 				</Links>
 				<Consulting>Consulting</Consulting>
-				<Form>[form]</Form>
+				<Form>s.r.o.</Form>
 			</Circle>
 		</div>
 	);
