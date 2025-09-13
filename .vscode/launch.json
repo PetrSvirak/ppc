@@ -1,0 +1,55 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Monster Dev Server",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/monster",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "dev"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Monster Build",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/monster",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "build"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Monster Preview",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/monster",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "preview"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Monster Check",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/monster",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "check"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Monster Format",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/monster",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "format"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}
