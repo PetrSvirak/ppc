@@ -17,4 +17,10 @@ export const link = style({
 		textDecoration: "none",
 		transform: "translateY(-1px)",
 	},
+
+	selectors: {
+		"[data-theme='dark'] &": {
+			color: "#fff",
+		},
+	},
 });

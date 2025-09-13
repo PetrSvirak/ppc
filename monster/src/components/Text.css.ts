@@ -12,4 +12,11 @@ export const form = style({
 	color: "#888",
 	fontWeight: 300,
 	letterSpacing: "0.1em",
+	transition: "color 0.3s ease",
+
+	selectors: {
+		"[data-theme='dark'] &": {
+			color: "#aaa",
+		},
+	},
 });
