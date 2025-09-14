@@ -23,8 +23,8 @@ function App() {
 		<div className={app}>
 			<Circle>
 				<Links>
-					<Links.Link href={REDIRECTS.petr}>Petr</Links.Link>{" "}
-					<Links.Link href={REDIRECTS.pavel}>Pavel</Links.Link>
+					<Links.Link href={REDIRECTS.petr} title={`→ ${REDIRECTS.petr}`}>Petr</Links.Link>{" "}
+					<Links.Link href={REDIRECTS.pavel} title={`→ ${REDIRECTS.pavel}`}>Pavel</Links.Link>
 				</Links>
 				<Consulting>Consulting</Consulting>
 				<Form>s.r.o.</Form>

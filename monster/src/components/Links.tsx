@@ -8,11 +8,12 @@ interface LinksProps {
 interface LinkProps {
 	href: string;
 	children: ReactNode;
+	title?: string;
 }
 
-const Link = ({ href, children }: LinkProps) => {
+const Link = ({ href, children, title }: LinkProps) => {
 	return (
-		<a href={href} className={link}>
+		<a href={href} className={link} title={title || children?.toString()}>
 			{children}
 		</a>
 	);
