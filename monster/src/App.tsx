@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { app } from "./App.css";
 import { Circle, Consulting, Form, Links } from "./components";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { TaxId } from "./TaxId";
 import {
 	extractPath,
 	extractSubdomain,
@@ -34,6 +35,7 @@ function App() {
 					</Links>
 					<Consulting>Consulting</Consulting>
 					<Form>s.r.o.</Form>
+					<TaxId />
 				</Circle>
 			</div>
 		</ThemeProvider>
