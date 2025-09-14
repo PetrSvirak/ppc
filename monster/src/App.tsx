@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { app } from "./App.css";
 import { Circle, Consulting, Form, Links } from "./components";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import {
 	extractPath,
 	extractSubdomain,
@@ -20,16 +21,22 @@ function App() {
 	}, []);
 
 	return (
-		<div className={app}>
-			<Circle>
-				<Links>
-					<Links.Link href={REDIRECTS.petr} title={`→ ${REDIRECTS.petr}`}>Petr</Links.Link>{" "}
-					<Links.Link href={REDIRECTS.pavel} title={`→ ${REDIRECTS.pavel}`}>Pavel</Links.Link>
-				</Links>
-				<Consulting>Consulting</Consulting>
-				<Form>s.r.o.</Form>
-			</Circle>
-		</div>
+		<ThemeProvider>
+			<div className={app}>
+				<Circle>
+					<Links>
+						<Links.Link href={REDIRECTS.petr} title={`→ ${REDIRECTS.petr}`}>
+							Petr
+						</Links.Link>{" "}
+						<Links.Link href={REDIRECTS.pavel} title={`→ ${REDIRECTS.pavel}`}>
+							Pavel
+						</Links.Link>
+					</Links>
+					<Consulting>Consulting</Consulting>
+					<Form>s.r.o.</Form>
+				</Circle>
+			</div>
+		</ThemeProvider>
 	);
 }
 

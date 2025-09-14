@@ -1,4 +1,10 @@
-import { useEffect, useState } from "react";
+import {
+	createContext,
+	type ReactNode,
+	useContext,
+	useEffect,
+	useState,
+} from "react";
 
 export enum Theme {
 	LIGHT = "light",
@@ -6,12 +12,20 @@ export enum Theme {
 	AUTO = "auto",
 }
 
+interface ThemeContextType {
+	theme: Theme;
+	isDark: boolean;
+	toggleTheme: () => void;
+}
+
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
 const darkThemeSelector = "(prefers-color-scheme: dark)";
 const eventListenerName = "change";
 const localStoreKey = "theme";
 const htmlThemeDataAttribute = "data-theme";
 
-export const useTheme = () => {
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 	const [theme, setTheme] = useState<Theme>(() => {
 		const saved = localStorage.getItem(localStoreKey);
 		return (saved as Theme) || Theme.AUTO;
@@ -56,5 +70,17 @@ export const useTheme = () => {
 		});
 	};
 
-	return { theme, isDark, toggleTheme };
+	return (
+		<ThemeContext.Provider value={{ theme, isDark, toggleTheme }}>
+			{children}
+		</ThemeContext.Provider>
+	);
+};
+
+export const useTheme = () => {
+	const context = useContext(ThemeContext);
+	if (context === undefined) {
+		throw new Error("useTheme must be used within a ThemeProvider");
+	}
+	return context;
 };

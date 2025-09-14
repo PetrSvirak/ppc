@@ -1,6 +1,6 @@
 import { Lightbulb, LightbulbOff, Moon, Sun } from "lucide-react";
 import type { ReactNode } from "react";
-import { Theme, useTheme } from "../hooks/useTheme";
+import { Theme, useTheme } from "../contexts/ThemeContext";
 import { circle, themeToggle } from "./Circle.css";
 
 interface CircleProps {
